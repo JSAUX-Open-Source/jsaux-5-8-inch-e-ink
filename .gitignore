@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+*.orig
+*.bak
+*.log
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+.venv-pep8/
+venv/
+node_modules/
+.env
+.env.*
+settings.json
+agent_token
+backups/
+logs/
+.DS_Store
+
+# Local-only / never publish
+proprietary/
+release/
+*.docx

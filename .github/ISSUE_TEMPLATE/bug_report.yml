@@ -1,0 +1,63 @@
+name: Bug report
+description: Something is broken on Steam Machine / SteamOS
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Please fill every required field so we can reproduce the issue.
+        Do **not** post security vulnerabilities here — use [private vulnerability reporting](https://github.com/JSAUX-Open-Source/JSAUX-E-INK/security/advisories/new).
+  - type: input
+    id: host_model
+    attributes:
+      label: Host model
+      description: Steam Machine model or exact SteamOS device you are using
+      placeholder: e.g. Steam Machine (retail) / other SteamOS device
+    validations:
+      required: true
+  - type: input
+    id: steamos_version
+    attributes:
+      label: SteamOS version
+      description: Settings → System, or `cat /etc/os-release`
+      placeholder: e.g. 3.7.x
+    validations:
+      required: true
+  - type: input
+    id: decky_version
+    attributes:
+      label: Decky Loader version
+      placeholder: e.g. 3.x.x
+    validations:
+      required: true
+  - type: input
+    id: plugin_version
+    attributes:
+      label: Plugin version
+      description: From plugin.json / Decky plugin list (this tree is 1.2)
+      placeholder: e.g. 1.2
+    validations:
+      required: true
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: What happened
+      description: Expected vs actual behavior; steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log excerpt
+      description: |
+        Paste a short excerpt from `~/homebrew/logs/jsaux-eink-display/` (or the matching plugin log folder).
+        Redact tokens, emails, and personal paths if present.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Extra context
+      description: Screenshots, photos of the panel, BLE adapter notes, etc. (optional)

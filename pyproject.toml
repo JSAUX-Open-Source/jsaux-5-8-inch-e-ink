@@ -1,0 +1,52 @@
+[project]
+name = "jsaux-eink"
+version = "1.2.0"
+description = "Decky Loader plugin and SteamOS desktop companion for JSAUX E-INK"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "JSAUX" }]
+
+[tool.black]
+line-length = 100
+target-version = ["py311", "py312", "py313"]
+extend-exclude = """
+/(
+  py_modules
+  | runtime_wheels
+  | node_modules
+  | dist
+  | release
+  | proprietary
+  | \\.venv-pep8
+)/
+"""
+
+[tool.isort]
+profile = "black"
+line_length = 100
+# Keep main.py / eink_daemon.py bootstrap (sys.path before bleak/aiohttp) intact.
+skip = ["main.py", "eink_daemon.py"]
+skip_glob = [
+  "py_modules/*",
+  "runtime_wheels/*",
+  "node_modules/*",
+  "dist/*",
+  "release/*",
+  "proprietary/*",
+  ".venv-pep8/*",
+]
+
+[tool.flake8]
+max-line-length = 100
+extend-ignore = ["E203", "W503"]
+exclude = [
+  "py_modules",
+  "runtime_wheels",
+  "node_modules",
+  "dist",
+  "release",
+  "proprietary",
+  ".venv-pep8",
+  "__pycache__",
+]

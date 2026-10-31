@@ -1,0 +1,14 @@
+[Unit]
+Description=JSAUX E-INK local HTTP and WebSocket daemon
+
+[Service]
+Type=simple
+WorkingDirectory=@APP_ROOT@
+Environment=PYTHONUNBUFFERED=1
+Environment=JSAUX_EINK_SETTINGS_DIR=%h/homebrew/settings/jsaux-eink-display
+ExecStart=/usr/bin/env python3 @APP_ROOT@/eink_daemon.py --host 127.0.0.1 --port 39062
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,36 @@
+name: Feature request
+description: Suggest an improvement to the open host App
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the user-facing need. Chip firmware / OTA / factory topics are out of scope
+        (see [PROPRIETARY.md](https://github.com/JSAUX-Open-Source/JSAUX-E-INK/blob/main/PROPRIETARY.md)).
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / motivation
+      description: What are you trying to do that is hard or impossible today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Layouts, Desktop Mode, BLE host tooling, docs, etc.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Optional — workarounds or other approaches you tried
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check
+      options:
+        - label: This request is about the host App (UI, rendering, daemon, installers, BLE image transfer) — not chip firmware or OTA flashing
+          required: true

@@ -1,0 +1,15 @@
+{
+  "name": "JSAUX E-INK",
+  "version": "1.2",
+  "author": "JSAUX",
+  "flags": [],
+  "api_version": 1,
+  "publish": {
+    "tags": [
+      "hardware",
+      "e-ink",
+      "ble"
+    ],
+    "description": "Control the JSAUX E-Ink Faceplate for Steam Machine via BLE. Supports clock, weather, and custom images. Chip firmware/OTA flashing is not included."
+  }
+}
